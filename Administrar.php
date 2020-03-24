@@ -4,7 +4,8 @@ include('security.php');
 require("Conexion.php");
 $x=0;
 $con=Connect::conectar();
-$datos=$con->query("SELECT * FROM alumno INNER JOIN docente on alumno.Equipo_id_Equipo=docente.Equipo_id_Equipo INNER JOIN equipo on alumno.Equipo_id_Equipo = equipo.id_Equipo ORDER BY alumno.Equipo_id_Equipo ASC") or die ($con->error." linea 1")
+$datos=$con->query("SELECT * FROM alumno INNER JOIN docente on alumno.Equipo_id_Equipo=docente.Equipo_id_Equipo INNER JOIN equipo on alumno.Equipo_id_Equipo = equipo.id_Equipo ORDER BY alumno.Equipo_id_Equipo ASC") or die ($con->error." linea 1");
+$datos2=$con->query("SELECT * FROM equipo") or die($con->error());
 ?>
 <html lang="es">
 <head>
@@ -32,6 +33,8 @@ $datos=$con->query("SELECT * FROM alumno INNER JOIN docente on alumno.Equipo_id_
     <th>Nombre del equipo</th>
        <?php
        //print_r($filas=mysqli_fetch_array($datos));
+       //se cambio el tipo de input para mostrar los datos(se modifica process1 y process2)
+       //se agrega la opcion de eliminar docente y equipo
      while($filas=mysqli_fetch_assoc($datos)){  
            echo 
            "<tr>
@@ -39,18 +42,23 @@ $datos=$con->query("SELECT * FROM alumno INNER JOIN docente on alumno.Equipo_id_
                 <td><input type='text' value='$filas[Nombre_A]' maxlength='45'name='Nombre_A' indice='$filas[idAlumno]'><button class='delete' name='Nombre_A' indice='$filas[idAlumno]'>Eliminar registro</button></td>
                 <td><input type='text' value='$filas[Carrera]'maxlength='45' name='Carrera' indice='$filas[idAlumno]'></td>
                 <td><input type='text' value='$filas[Sexo_A]'maxlength='1' name='Sexo_A' indice='$filas[idAlumno]'></td>
-                <td><input type='number' value='$filas[Telefono_A]'maxlength='45' name='Telefono_A' indice='$filas[idAlumno]'></td>
+                <td><input type='text' value='$filas[Telefono_A]'maxlength='45' name='Telefono_A' indice='$filas[idAlumno]'></td>
                 <td><input type='email' value='$filas[Correo_A]'maxlength='45' name='Correo_A' indice='$filas[idAlumno]'></td>
-                <td><input type='text' value='$filas[Nombre_D]'maxlength='45' name='Nombre_D'></td>
-                <td><input type='text' value='$filas[Cargo]'maxlength='45' name='Cargo'></td>
-                <td><input type='text' value='$filas[Dependencia]'maxlength='45' name='Dependencia'></td>
-                <td><input type='number' value='$filas[Telefono_D]'maxlength='45' name='Telefono_D'></td>
-                <td><input type='text' value='$filas[Correo_D]'maxlength='45' name='Correo_D'></td>
-                <td><input type='text' value='$filas[Sexo_D]'maxlength='1' name='Sexo_D'></td>
-                <td><input type='text' value='$filas[Nombre]'maxlength='45' name='Nombre'></td>
-
+                <td><input type='text' value='$filas[Nombre_D]'maxlength='45' name='Nombre_D' indice='$filas[ID_docente]'><button class='delete' name='Nombre_D' indice='$filas[ID_docente]'>Eliminar registro</button></td>
+                <td><input type='text' value='$filas[Cargo]'maxlength='45' name='Cargo' indice='$filas[ID_docente]'></td>
+                <td><input type='text' value='$filas[Dependencia]'maxlength='45' name='Dependencia' indice='$filas[ID_docente]'></td>
+                <td><input type='text' value='$filas[Telefono_D]'maxlength='45' name='Telefono_D' indice='$filas[ID_docente]'></td>
+                <td><input type='text' value='$filas[Correo_D]'maxlength='45' name='Correo_D' indice='$filas[ID_docente]'></td>
+                <td><input type='text' value='$filas[Sexo_D]'maxlength='1' name='Sexo_D' indice='$filas[ID_docente]'></td>
+                <td><input type='text' value='$filas[Nombre]'maxlength='45' name='Nombre' indice='$filas[id_Equipo]'><button class='delete' name='Nombre' indice='$filas[id_Equipo]'>Eliminar registro</button></td>
            </tr>";
-       }
+       }/*
+       implementacion a futuro y posible implementacion en campo 'Dependencia'
+       echo " <td><select>";
+       while($filas2=mysqli_fetch_assoc($datos2)){
+          echo "<option indice='$filas2[id_Equipo]'>$filas2[Nombre]</option>";
+       }"</select></td>
+*/
        ?>
     </table>
     </form>
