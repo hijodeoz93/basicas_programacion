@@ -32,3 +32,18 @@ $(document).ready(function() {
         });
     });                 
 });    
+$(document).ready(function() {
+	$('select').change( function() {
+        var field = $(this).find('option');
+        //var validationField = field.parent().find('.validation');
+        var dataString = 'value='+$(this).val()+'&field='+field.attr('name')+'&indice='+field.attr('indice');
+        console.log(dataString);
+	$.ajax({
+            type: "POST",
+            url: "process1.php",
+            data: dataString,
+            success: function(data) {
+            }
+        });
+    });
+});

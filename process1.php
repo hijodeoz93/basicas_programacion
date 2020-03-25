@@ -13,6 +13,8 @@ if($field=="Nombre_A"|| $field=="Carrera"||$field=="Sexo_A"||$field=="Correo_A" 
     echo $data;
 }elseif($field=="Nombre"){
     $act=$con->query("UPDATE equipo SET $field='$data' WHERE id_Equipo=$data2") or die ($con->error);
+    $act=$con->query("DELETE FROM equipo WHERE id_Equipo=$data") or die ($con->error);
+
 
 }
 
