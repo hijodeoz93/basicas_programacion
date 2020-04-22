@@ -37,7 +37,7 @@ CREATE TABLE `alumno` (
   `Sexo_A` char(1) DEFAULT NULL,
   `Telefono_A` varchar(45) DEFAULT NULL,
   `Correo_A` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);
 
 --
 -- Volcado de datos para la tabla `alumno`
