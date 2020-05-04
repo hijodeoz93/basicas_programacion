@@ -12,21 +12,8 @@ include('security.php');
     <form action="ingresa_registro.php" method="POST" enctype="multipart/form-data" name="registro">
     <button><a href="salir.php">Salir</a></button>
         <fieldset>
-            <legend>Ingresa los datos soliciatados</legend>
-           <p> <input type="text" name="nom" id="" placeholder="Nombre" required=true></p>
-           <p> <input type="text" name="ape" id="" placeholder="Apellidos" required></p>
-           <p> <input type="text" name="cargo" id="" placeholder="Cargo" required></p>
-           <p> <input type="email" name="correo" id="" placeholder="Correo" required></p>
-           <!-- <p> <input type="number" name="no_control" id="" placeholder="No. de control" required></p>-->
-           <p>Selecciona tu género:</p>
-           <p><input type="radio" name="sexo" value="M"><label>Masculino</label></p>
-           <p><input type="radio" name="sexo" value="F"><label>Femenino</label></p>
-           <p><input type="text" name="dep" placeholder="Dependencia" required></p>
-           <p><input type="text" name="equipo" placeholder="Nombre del equipo" required></p>
-           <p >Ingresa el numero de integrantes</p>
-           <p><input type="number" name="integrantes" id="integ"></p>
-           <div id="integrantes">
-            <div id="integrante1">
+        <legend>Ingesa tu datos</legend>
+        <div id="integrante">
            <p><label>Integrante 1</label></p>
                 <p><input type="text" name="nomint1" placeholder="Nombre" required></p>
                 <p><input type="number" name="edadint1" placeholder="Edad" required></p>
@@ -38,7 +25,17 @@ include('security.php');
                 <p><input type="tel" name="telint1" placeholder="teléfono" required></p>
                 <p><input type="email" name="correoint1" placeholder="Correo" required></p>
             </div>
-        </div>
+            <legend>Ingresa los datos de tu asesor</legend>
+           <p> <input type="text" name="nom" id="" placeholder="Nombre" required=true></p>
+           <p> <input type="text" name="ape" id="" placeholder="Apellidos" required></p>
+           <p> <input type="text" name="cargo" id="" placeholder="Cargo"></p>
+           <p> <input type="email" name="correo" id="" placeholder="Correo" ></p>
+           <!-- <p> <input type="number" name="no_control" id="" placeholder="No. de control" required></p>-->
+           <p>Selecciona tu género:</p>
+           <p><input type="radio" name="sexo" value="M"><label>Masculino</label></p>
+           <p><input type="radio" name="sexo" value="F"><label>Femenino</label></p>
+           <p><input type="text" name="dep" placeholder="Dependencia" required></p>
+            
            <p>
                <select>
                    
