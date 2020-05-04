@@ -9,6 +9,8 @@ $datos3=$con->query("SELECT * FROM equipo") or die($con->error());
 $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Dependencia") or die($con->error());
 ?>
 <html lang="es">
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,13 +27,7 @@ $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Depend
     <th>Sexo del Alumno</th>
     <th>Telefono del alumno</th>
     <th>Correo del alumno</th>
-    <th>Nombre del Docente</th>
-    <th>Cargo</th>
-    <th>Dependencia</th>
-    <th>Teléfono del Docente</th>
-    <th>Correo del Docente</th>
-    <th>Sexo del Docente</th>
-    <th>Nombre del equipo</th>
+    
        <?php
        //print_r($filas=mysqli_fetch_array($datos));
       
@@ -44,18 +40,31 @@ $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Depend
                 <td><input type='text' value='$filas[Sexo_A]'maxlength='1' name='Sexo_A' indice='$filas[idAlumno]'></td>
                 <td><input type='text' value='$filas[Telefono_A]'maxlength='45' name='Telefono_A' indice='$filas[idAlumno]'></td>
                 <td><input type='email' value='$filas[Correo_A]'maxlength='45' name='Correo_A' indice='$filas[idAlumno]'></td>
+                </tr>
+                </table>
+     ";}
+     echo"
+     <br/>
+     <table border=1>
+    <th>Nombre del Docente</th>
+    <th>Cargo</th>
+    <th>Dependencia</th>
+    <th>Sexo del Docente</th>
+    ";
+    $datos5=$con->query("SELECT * FROM alumno INNER JOIN docente on alumno.Equipo_id_Equipo=docente.Equipo_id_Equipo INNER JOIN equipo on alumno.Equipo_id_Equipo = equipo.id_Equipo ORDER BY alumno.Equipo_id_Equipo ASC") or die ($con->error." linea 5");
+    $datos3=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Dependencia") or die($con->error());
+    while($filas=mysqli_fetch_assoc($datos5) or die($con->error)){
+        echo "<tr>
                 <td><input type='text' value='$filas[Nombre_D]'maxlength='45' name='Nombre_D' indice='$filas[ID_docente]'><button class='delete' name='Nombre_D' indice='$filas[ID_docente]'>Eliminar registro</button></td>
                 <td><input type='text' value='$filas[Cargo]'maxlength='45' name='Cargo' indice='$filas[ID_docente]'></td>";
                 echo " <td><select>";
-       while($filas2=mysqli_fetch_assoc($datos2)){
+       while($filas2=mysqli_fetch_assoc($datos3)){
           echo "<option indice='$filas[ID_docente]' carga='$filas2[Nombre]' name='Dependencia'>$filas2[Nombre]</option>";
        } echo"</select></td>
-                <td><input type='text' value='$filas[Telefono_D]'maxlength='45' name='Telefono_D' indice='$filas[ID_docente]'></td>
-                <td><input type='text' value='$filas[Correo_D]'maxlength='45' name='Correo_D' indice='$filas[ID_docente]'></td>
                 <td><input type='text' value='$filas[Sexo_D]'maxlength='1' name='Sexo_D' indice='$filas[ID_docente]'></td>
-                <td><input type='text' value='$filas[Nombre]'maxlength='45' name='Nombre' indice='$filas[id_Equipo]'></td>
            </tr>";
-       }/*
+    }
+       /*
        implementacion a futuro y posible implementacion en campo 'Dependencia'
        echo " <td><select>";
        while($filas2=mysqli_fetch_assoc($datos2)){
