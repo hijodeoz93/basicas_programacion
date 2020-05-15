@@ -3,6 +3,7 @@ $(document).ready(function() {
         var field = $(this);
         //var validationField = field.parent().find('.validation');
         var dataString = 'value='+field.val()+'&field='+field.attr('name')+'&indice='+field.attr('indice');
+        //console.log(dataString);
 	$.ajax({
             type: "POST",
             url: "process1.php",
@@ -20,7 +21,7 @@ $(document).ready(function() {
         var item = $(this);
         var dato= item.attr('indice');
         var dataString = 'item='+dato+'&field='+item.attr('name');
-        console.log(dataString);
+        //console.log(dataString);
  
         $.ajax({
             type: "POST",
@@ -37,7 +38,7 @@ $(document).ready(function() {
         var field = $(this).find('option');
         //var validationField = field.parent().find('.validation');
         var dataString = 'value='+$(this).val()+'&field='+field.attr('name')+'&indice='+field.attr('indice');
-        console.log(dataString);
+        //console.log(dataString);
 	$.ajax({
             type: "POST",
             url: "process1.php",

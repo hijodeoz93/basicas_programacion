@@ -17,5 +17,8 @@ if($field=="Nombre_A"|| $field=="Carrera"||$field=="Sexo_A"||$field=="Correo_A" 
 
 
 }
+else{
+    echo"error";
+}
 
 ?>

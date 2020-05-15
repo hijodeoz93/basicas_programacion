@@ -4,8 +4,7 @@ include('security.php');
 require("Conexion.php");
 $x=0;
 $con=Connect::conectar();
-$datos=$con->query("SELECT * FROM alumno INNER JOIN docente on alumno.Equipo_id_Equipo=docente.Equipo_id_Equipo INNER JOIN equipo on alumno.Equipo_id_Equipo = equipo.id_Equipo ORDER BY alumno.Equipo_id_Equipo ASC") or die ($con->error." linea 1");
-$datos3=$con->query("SELECT * FROM equipo") or die($con->error());
+$datos=$con->query("SELECT * FROM alumno INNER JOIN docente on alumno.Id_Docente=docente.ID_Docente ") or die ($con->error." linea 1");
 $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Dependencia") or die($con->error());
 ?>
 <html lang="es">
@@ -14,6 +13,8 @@ $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Depend
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="update.js"></script>
     <title>Modulo de administracion</title>
 </head>
 <body>
@@ -51,7 +52,7 @@ $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Depend
     <th>Dependencia</th>
     <th>Sexo del Docente</th>
     ";
-    $datos5=$con->query("SELECT * FROM alumno INNER JOIN docente on alumno.Equipo_id_Equipo=docente.Equipo_id_Equipo INNER JOIN equipo on alumno.Equipo_id_Equipo = equipo.id_Equipo ORDER BY alumno.Equipo_id_Equipo ASC") or die ($con->error." linea 5");
+    $datos5=$con->query("SELECT * FROM alumno INNER JOIN docente on alumno.Id_Docente=docente.ID_Docente ") or die ($con->error." linea 5");
     $datos3=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Dependencia") or die($con->error());
     while($filas=mysqli_fetch_assoc($datos5) or die($con->error)){
         echo "<tr>
@@ -76,6 +77,4 @@ $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Depend
     </table>
     </form>
 </body>
-<script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="update.js"></script>
 </html>

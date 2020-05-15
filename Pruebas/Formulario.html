@@ -45,18 +45,39 @@
                     </font>
         <form action="" method="post" class="form-register">
                 <h2 class="form_titulo">Registro</h2></font>
-            <div class="Contenedor-inputs">
-            <input type="text" name="nombre" placeholder="Nombre" class="input-48" required>
-            <input type="text" name="apellidos" placeholder="Apellidos" class="input-48" required>
-            <input type="text" name="correo" placeholder="Correo" class="input-100" required>
-            <input type="text" name="usuario" placeholder="Usuario" class="input-48" required>
-            <input type="text" name="password" placeholder="Password" class="input-48" required>
-            <input type="text" name="telefono" placeholder="Telefono" class="input-100" required>
-            <input type="text" name="dependencia" placeholder="Dependencia" class="input-100" required>
-            <input type="submit" value="Registrar" class="btn-enviar">
-                <p class="form_link">¿Ya estas registrado?<a href="index.html" class=".link">Ingresa aqui</a>
-            </div>
-        </form>
+                <fieldset>
+                    <legend class="form_titulo">Ingresa tu datos</legend>
+                    <div class="Contenedor-inputs">
+                       <p><label>Integrante 1</label></p>
+                            <p><input type="text" name="nomint1" placeholder="Nombre" required></p>
+                            <p><input type="number" name="edadint1" placeholder="Edad" required></p>
+                            <p><input type="text" name="carrint1" placeholder="Carrera (si aplica)"></p>
+                            <p>Selecciona su género:</p>
+                            <p><input type="radio" name="sexoint1" value="M"><label>Masculino</label></p>
+                            <p><input type="radio" name="sexoint1" id="F"><label>Femenino</label></p>
+            
+                            <p><input type="tel" name="telint1" placeholder="teléfono" required></p>
+                            <p><input type="email" name="correoint1" placeholder="Correo" required></p>
+                        </div>
+                        <legend>Ingresa los datos de tu asesor</legend>
+                       <p> <input type="text" name="nom" id="" placeholder="Nombre" required=true></p>
+                       <p> <input type="text" name="ape" id="" placeholder="Apellidos" required></p>
+                       <p> <input type="text" name="cargo" id="" placeholder="Cargo"></p>
+                       <p> <input type="email" name="correo" id="" placeholder="Correo" ></p>
+                       <!-- <p> <input type="number" name="no_control" id="" placeholder="No. de control" required></p>-->
+                       <p>Selecciona tu género:</p>
+                       <p><input type="radio" name="sexo" value="M"><label>Masculino</label></p>
+                       <p><input type="radio" name="sexo" value="F"><label>Femenino</label></p>
+                       <p><input type="text" name="dep" placeholder="Dependencia" required></p>
+                        
+                       <p>
+                           <select>
+                               
+                           </select>
+                           <input type="submit" value="Enviar Registro" name="enviar" onclick="confirmar()">
+                       </p>
+                    </fieldset>
+                </form>
 </body>
 <footer>
     <p class="texto"><font face="Baskerville Old Face">Todos los derechos reservados.@ 2020-JS</p></font>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-05-2020 a las 05:02:58
+-- Tiempo de generación: 07-05-2020 a las 20:42:16
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.2
 
@@ -32,11 +32,12 @@ CREATE TABLE `alumno` (
   `idAlumno` int(11) NOT NULL,
   `Carrera` varchar(45) DEFAULT NULL,
   `Edad` int(11) DEFAULT NULL,
-  `Nombre` varchar(45) DEFAULT NULL,
-  `Sexo` char(1) DEFAULT NULL,
-  `Telefono` varchar(45) DEFAULT NULL,
-  `Correo` varchar(45) DEFAULT NULL,
-  `Tareas_idCatalogo` int(11) NOT NULL
+  `Nombre_A` varchar(45) DEFAULT NULL,
+  `Sexo_A` char(1) DEFAULT NULL,
+  `Telefono_A` varchar(45) DEFAULT NULL,
+  `Correo_A` varchar(45) DEFAULT NULL,
+  `Tareas_idCatalogo` int(11) NOT NULL,
+  `Id_Docente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -61,12 +62,11 @@ CREATE TABLE `calificaciones` (
 CREATE TABLE `docente` (
   `ID_docente` int(11) NOT NULL,
   `Cargo` varchar(45) DEFAULT NULL,
-  `Nombre` varchar(45) DEFAULT NULL,
-  `Sexo` varchar(45) DEFAULT NULL,
+  `Nombre_D` varchar(45) DEFAULT NULL,
+  `Sexo_D` varchar(45) DEFAULT NULL,
   `Dependencia` varchar(45) DEFAULT NULL,
-  `Telefono` varchar(45) DEFAULT NULL,
-  `Correo` varchar(45) DEFAULT NULL,
-  `Alumno_idAlumno` int(11) NOT NULL
+  `Telefono_D` varchar(45) DEFAULT NULL,
+  `Correo_D` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -108,14 +108,6 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`idUsuarios`, `Tipo`, `Usuario`, `Contraseña`) VALUES
-(1, 'Sup', 'SuperUS', 'Administrador'),
-(2, 'dos', 'Hazael', 'Programacion');
-
---
 -- Índices para tablas volcadas
 --
 
@@ -124,7 +116,8 @@ INSERT INTO `usuarios` (`idUsuarios`, `Tipo`, `Usuario`, `Contraseña`) VALUES
 --
 ALTER TABLE `alumno`
   ADD PRIMARY KEY (`idAlumno`,`Tareas_idCatalogo`),
-  ADD KEY `fk_Alumno_Tareas1_idx` (`Tareas_idCatalogo`);
+  ADD KEY `fk_Alumno_Tareas1_idx` (`Tareas_idCatalogo`),
+  ADD KEY `Id_Docente` (`Id_Docente`);
 
 --
 -- Indices de la tabla `calificaciones`
@@ -136,8 +129,7 @@ ALTER TABLE `calificaciones`
 -- Indices de la tabla `docente`
 --
 ALTER TABLE `docente`
-  ADD PRIMARY KEY (`ID_docente`,`Alumno_idAlumno`),
-  ADD KEY `fk_Docente_Alumno1_idx` (`Alumno_idAlumno`);
+  ADD PRIMARY KEY (`ID_docente`);
 
 --
 -- Indices de la tabla `especificaciones`
@@ -196,7 +188,7 @@ ALTER TABLE `tareas`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idUsuarios` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -206,6 +198,7 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `alumno`
 --
 ALTER TABLE `alumno`
+  ADD CONSTRAINT `alumno_ibfk_1` FOREIGN KEY (`Id_Docente`) REFERENCES `docente` (`ID_docente`),
   ADD CONSTRAINT `fk_Alumno_Tareas1` FOREIGN KEY (`Tareas_idCatalogo`) REFERENCES `tareas` (`idCatalogo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
@@ -213,12 +206,6 @@ ALTER TABLE `alumno`
 --
 ALTER TABLE `calificaciones`
   ADD CONSTRAINT `fk_Calificaciones_Tareas1` FOREIGN KEY (`Tareas_idCatalogo`) REFERENCES `tareas` (`idCatalogo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `docente`
---
-ALTER TABLE `docente`
-  ADD CONSTRAINT `fk_Docente_Alumno1` FOREIGN KEY (`Alumno_idAlumno`) REFERENCES `alumno` (`idAlumno`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `especificaciones`

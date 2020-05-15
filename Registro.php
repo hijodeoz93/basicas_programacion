@@ -6,14 +6,15 @@ include('security.php');
     <script type="text/javascript" src="funciones.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Pruebas/Formulario.css">
     <title>Registro de aspitantes</title>
 </head>
 <body>
-    <form action="ingresa_registro.php" method="POST" enctype="multipart/form-data" name="registro">
+    <form action="ingresa_registro.php" method="POST" enctype="multipart/form-data" name="registro"class="form-register">
     <button><a href="salir.php">Salir</a></button>
         <fieldset>
         <legend>Ingesa tu datos</legend>
-        <div id="integrante">
+        <div class="Contenedor-inputs">
            <p><label>Integrante 1</label></p>
                 <p><input type="text" name="nomint1" placeholder="Nombre" required></p>
                 <p><input type="number" name="edadint1" placeholder="Edad" required></p>
