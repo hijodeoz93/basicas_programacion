@@ -7,12 +7,11 @@ $session=$con->query("SELECT idAlumno from alumno where Id_usuario=$_SESSION[id]
 $id=mysqli_fetch_assoc($session);
 $cal=$con->query("select count(Id_tarea) as totalT from  tareas");
 $calt=mysqli_fetch_assoc($cal);
-
-$mid=$con->query("select max(Tipo_tarea) as maxId from avances where Id_alumno=$id[idAlumno]");
+$mid=$con->query("select count(Tipo_tarea) as maxId from avances where Id_alumno=$id[idAlumno]");
 $max=mysqli_fetch_assoc($mid);
-
+$_SESSION['tarea']=$max['maxId'];
 $resta=$calt['totalT']-$max['maxId'];
-
+$_SESSION['ciclos']=$resta;
 $datos=$con->query("select COUNT(Nombre_archivo) as entregado, (SUM(Calificacion))/".$calt['totalT']." as calTotal from avances where Id_alumno=$id[idAlumno]");
 $disparador=$con->query("call avance(@avance,$id[idAlumno]);");
 $datos2=$con->query("select @avance;");
@@ -35,6 +34,7 @@ $val2=mysqli_fetch_assoc($datos);
     <link rel="stylesheet" href="estilo.css"/>
 </head>
 <body>
+<button class="boton_salir"><a href="salir.php">Salir</a></button>
 <div class="principal">
 <h1>Tabla de avance</h1>
     <table border=1> 
@@ -49,7 +49,7 @@ $val2=mysqli_fetch_assoc($datos);
             <?php echo "<td><progress id='algo' value='$val[0]' max='100'> ".$val[0]."% </progress></td>" ?>
             </table>
 </br>
-    <form action="" method="post" enctype="multipart/form-data" id="form_subir">
+    <form action="sube.php" method="post" enctype="multipart/form-data" id="form_subir">
 
         <table border=1> 
         <th>Tareas pendientes</th>
@@ -61,12 +61,14 @@ $val2=mysqli_fetch_assoc($datos);
                 <td>$colTareas[Tipo_tarea]</td>
                 <td>
             <div class='form-1-2'>
-                    <input type='file' name='archivo'>
+                    <input type='file' name='archivo[]'>
                     </td>
                 </tr>
             </div>"; 
              }
             ?>
+     
+        </table>
         <div class="barra">
 			<div class="barra-azul" id="barra_estado">
 				<span></span>
@@ -75,8 +77,7 @@ $val2=mysqli_fetch_assoc($datos);
         <div class="acciones">
 		<input type="submit" class="bnt" value="Enviar">
 		<input type="button" class="cancelar" id="cancelar" value="Cancelar">
-        </div>
-        </table> 
+        </div> 
     </form>
 </div>
 </body>

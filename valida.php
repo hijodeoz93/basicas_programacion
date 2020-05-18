@@ -5,7 +5,7 @@ if(isset($_POST['Enviar'])){
     $dat2=htmlentities($_POST['pw']);
     
     $con=Connect::conectar();
-    $valida=$con->query("SELECT Usuario, ContraseÃ±a,Tipo, idUsuarios FROM usuarios where Usuario='$dat1' and ContraseÃ±a='$dat2'") or die ($con->error." -.-");
+    $valida=$con->query("SELECT Usuario, Contrasena,Tipo, idUsuarios FROM usuarios where Usuario='$dat1' and Contrasena='$dat2'") or die ($con->error." -.-");
     $busqueda=$valida->fetch_assoc();
     if(is_null($busqueda)){
         echo"<script>alert('La contraseña del usuario no es correcta.'); window.location.href=\"index.html\"</script>"; 
