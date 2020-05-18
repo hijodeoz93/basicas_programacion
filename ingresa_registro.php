@@ -1,6 +1,5 @@
 <?php
 include('security.php');
-@session_start();
 //poner mensaje de que el registro fue exitoso y redirecciona de nuevo
 require("Conexion.php");
 $val=[$_POST["nom"],$_POST["ape"],$_POST["cargo"],$_POST["correo"],$_POST["sexo"],$_POST["dep"]];
@@ -19,13 +18,13 @@ if($datos){
     echo "Ha ocurrido un error de comunicaciones por favor intenta mas tarde, si el error persiste contacta al administrador";
 }
 if($datos2){
-    $datos3=$con->query("insert into alumno(Carrera, Edad, Nombre_A, Sexo_A, Telefono_A, Correo_A, Id_Docente,Id_usuario)values('$val2[2]',$val2[1], '$val2[0]','$val2[3]','$val2[4]','$val2[5]',$val3[ID_Docente],".$_SESSION["id"].")");
+    $datos3=$con->query("insert into alumno(Carrera, Edad, Nombre_A, Sexo_A, Telefono_A, Correo_A, Id_Docente)values('$val2[2]',$val2[1], '$val2[0]','$val2[3]','$val2[4]','$val2[5]',$val3[ID_Docente])");
     $contr2=true;
 }else{
     echo "Ha ocurrido un error de comunicaciones por favor intenta mas tarde, si el error persiste contacta al administrador";
 }
 if($contr1||$contr2){
-    echo "datos ingresados correctamente <button><a href='salir.php'>Salir</a></button>";
+    echo "datos ingresados correctamente";
 
 }else{
     echo "aguanta que algo salio mal";
