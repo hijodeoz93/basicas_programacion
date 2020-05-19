@@ -16,7 +16,7 @@ if(isset($_POST['Enviar'])){
         if($busqueda["Tipo"]=='Sup'){
             header ("Location: Administrar.php");
         }else if($busqueda["Tipo"]=='dos'||$busqueda["Tipo"]=='Dos'){
-            header ("Location: Registro.php");
+            header ("Location: pizara.php");
         }
     }
 }

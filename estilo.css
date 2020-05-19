@@ -68,3 +68,6 @@ input[type="file"]{
     font-weight: bold;
     line-height: 25px;
 }
+p{
+    text-align: center;
+}

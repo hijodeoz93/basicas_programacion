@@ -2,7 +2,20 @@
 include("security.php");
 @session_start();
 require("Conexion.php");
-$con=Connect::conectar();
+
+function prom($var){
+    $con=Connect::conectar();
+    $t=$con->query("select count(Id_tarea) from tareas");
+    $ta=$con->query("SELECT COUNT(Id_tareas) from avances WHERE Id_alumno=$var");
+    $total=mysqli_fetch_array($t);
+    $tareas=mysqli_fetch_array($ta);
+    $res=($tareas[0]*100)/$total[0];
+    $dato=$res;
+    return $dato;
+    $con->close();
+    }
+
+    $con=Connect::conectar();
 $session=$con->query("SELECT idAlumno from alumno where Id_usuario=$_SESSION[id]");
 $id=mysqli_fetch_assoc($session);
 $cal=$con->query("select count(Id_tarea) as totalT from  tareas");
@@ -13,10 +26,8 @@ $_SESSION['tarea']=$max['maxId'];
 $resta=$calt['totalT']-$max['maxId'];
 $_SESSION['ciclos']=$resta;
 $datos=$con->query("select COUNT(Nombre_archivo) as entregado, (SUM(Calificacion))/".$calt['totalT']." as calTotal from avances where Id_alumno=$id[idAlumno]");
-$disparador=$con->query("call avance(@avance,$id[idAlumno]);");
-$datos2=$con->query("select @avance;");
-$val=mysqli_fetch_array($datos2) or die($con->error);
 $val2=mysqli_fetch_assoc($datos);
+$prom=prom($id['idAlumno']);
  /*   
 
 
@@ -46,7 +57,7 @@ $val2=mysqli_fetch_assoc($datos);
             <?php echo "<td>$calt[totalT]</td>" ?>
             <?php echo "<td>$val2[entregado]</td>" ?>
             <?php echo "<td>$val2[calTotal]</td>" ?>
-            <?php echo "<td><progress id='algo' value='$val[0]' max='100'> ".$val[0]."% </progress></td>" ?>
+            <?php echo "<td><progress id='algo' value='$prom' max='100'> ".$prom."% </progress></td>" ?>
             </table>
 </br>
     <form action="sube.php" method="post" enctype="multipart/form-data" id="form_subir">

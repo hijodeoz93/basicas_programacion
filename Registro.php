@@ -1,5 +1,4 @@
 <?php
-include('security.php');
 ?>
 <html lang="es">
 <head>
@@ -11,15 +10,18 @@ include('security.php');
 </head>
 <body>
     <form action="ingresa_registro.php" method="POST" enctype="multipart/form-data" name="registro"class="form-register">
-    <button><a href="salir.php">Salir</a></button>
+    <button><a href="salir.php">Regresar</a></button>
         <fieldset>
         <legend>Ingesa tu datos</legend>
         <div class="Contenedor-inputs">
-           <p><label>Integrante 1</label></p>
+           <p><input type='text' name='us' placeholder='Usuario'></p>
+           <p><input type='password' name='pass' placeholder='Contraseña'></p>
+           <p><input type='password' name='passc' placeholder='Repite la contraseña'></p>
+
                 <p><input type="text" name="nomint1" placeholder="Nombre" required></p>
                 <p><input type="number" name="edadint1" placeholder="Edad" required></p>
                 <p><input type="text" name="carrint1" placeholder="Carrera (si aplica)"></p>
-                <p>Selecciona su género:</p>
+                <p>Selecciona tu género:</p>
                 <p><input type="radio" name="sexoint1" value="M"><label>Masculino</label></p>
                 <p><input type="radio" name="sexoint1" id="F"><label>Femenino</label></p>
 

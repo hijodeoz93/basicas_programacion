@@ -32,7 +32,7 @@ $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Depend
        <?php
        //print_r($filas=mysqli_fetch_array($datos));
       
-     while($filas=mysqli_fetch_assoc($datos)){  
+     foreach($datos as $filas){  
            echo 
            "<tr>
                     
@@ -42,9 +42,10 @@ $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Depend
                 <td><input type='text' value='$filas[Telefono_A]'maxlength='45' name='Telefono_A' indice='$filas[idAlumno]'></td>
                 <td><input type='email' value='$filas[Correo_A]'maxlength='45' name='Correo_A' indice='$filas[idAlumno]'></td>
                 </tr>
-                </table>
+                
      ";}
      echo"
+     </table>
      <br/>
      <table border=1>
     <th>Nombre del Docente</th>
@@ -54,12 +55,12 @@ $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Depend
     ";
     $datos5=$con->query("SELECT * FROM alumno INNER JOIN docente on alumno.Id_Docente=docente.ID_Docente ") or die ($con->error." linea 5");
     $datos3=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Dependencia") or die($con->error());
-    while($filas=mysqli_fetch_assoc($datos5) or die($con->error)){
+    foreach($datos5 as $filas){
         echo "<tr>
                 <td><input type='text' value='$filas[Nombre_D]'maxlength='45' name='Nombre_D' indice='$filas[ID_docente]'><button class='delete' name='Nombre_D' indice='$filas[ID_docente]'>Eliminar registro</button></td>
                 <td><input type='text' value='$filas[Cargo]'maxlength='45' name='Cargo' indice='$filas[ID_docente]'></td>";
                 echo " <td><select>";
-       while($filas2=mysqli_fetch_assoc($datos3)){
+       foreach($datos3 as $filas2){
           echo "<option indice='$filas[ID_docente]' carga='$filas2[Nombre]' name='Dependencia'>$filas2[Nombre]</option>";
        } echo"</select></td>
                 <td><input type='text' value='$filas[Sexo_D]'maxlength='1' name='Sexo_D' indice='$filas[ID_docente]'></td>

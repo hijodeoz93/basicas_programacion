@@ -1,5 +1,5 @@
 <?php 
-require('conexion.php');
+require('Conexion.php');
 @session_start();
 $con=Connect::conectar();
 $tarea=$_SESSION['tarea']+1;
