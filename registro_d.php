@@ -1,4 +1,6 @@
 <?php
+require("Conexion.php");
+$con=Connect::conectar();
 ?>
 <html lang="es">
 <head>
@@ -6,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Pruebas/Formulario.css">
-    <title>Registro de aspitantes</title>
+    <title>Registro de Docentes</title>
 </head>
 <body>
 <h1>Registro de alumno</h1>
@@ -33,8 +35,6 @@
                <select>
                <option default>Selecciona una opcion</option>
                    <?php
-                   require("Conexion.php");
-                   $con=Connect::conectar();
                         $datos3=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Dependencia") or die($con->error());
                         foreach($datos3 as $filas2){
                             echo "<option indice='$filas[ID_docente]' carga='$filas2[Nombre]' name='Dependencia'>$filas2[Nombre]</option>";

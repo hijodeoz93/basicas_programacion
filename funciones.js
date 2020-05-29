@@ -3,9 +3,47 @@ function ocultar(){
     document.getElementById('integrantes').style.display="none";
 }
 function confirmar(){
-    val=confirm("¿Estas seguro de enviar los datos?");
-    if(val){
+   let val=1;
+    if(document.registro.us.value.length==0){
+        alert('El campo usuario no debe estar vacio');
+        document.registro.us.focus();
+        return val=0;
+    }
+    if(document.registro.pass.value.length<8){
+        alert('La contraseña debe ser de 8 caracteres minimo.');
+        document.registro.pass.focus();
+        return val=0;
+    }
+    if(document.registro.nomint.value.length==0){
+        alert('El nombre no debe estar vacio');
+        document.registro.nomint.focus();
+        return val=0;
+    }
+    if(document.registro.edadint.value<18){
+        alert('La edad debe ser mayor a 18');
+        document.registro.edadint.focus();
+        return val=0;
+    }
+    if(document.registro.carrint.value.length==0){
+        alert('El nombre de la carrera no debe estar vacio');
+        document.registro.carrint.focus();
+        return val=0;
+    }
+    if(document.registro.telint.value.length==0){
+        alert('El telefono no debe estar vacio');
+        document.registro.telint.focus();
+        return val=0;
+    }
+    if(document.registro.correoint1.value.length==0){
+        alert('El correo no debe estar vacio');
+        document.registro.correoint1.focus();
+        return val=0;
+    }
+    //val=confirm("¿Estas seguro de enviar los datos?");
+   if(val==1){
             document.registro.submit();
+        }else{
+            val=0;
         }
         
     }

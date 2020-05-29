@@ -12,7 +12,7 @@ $val2=[$_POST["nomint1"],$_POST["edadint1"],$_POST["carrint1"],$_POST["sexoint1"
 $contr1=false;
 $contr2=false;
 $contr3=false;
-
+//modificar las inserciones ya que se agreara el campo de docentes como select.
 $datos=$con->query("insert into docente (Cargo, Nombre_D, Sexo_D, Dependencia) values('$val[2]','$val[0]','$val[4]','$val[5]')");
 if($datos){
     $datos2=$con->query("SELECT ID_Docente from docente where Nombre_D='$val[0]'");
