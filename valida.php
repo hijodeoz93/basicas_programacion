@@ -17,6 +17,8 @@ if(isset($_POST['Enviar'])){
             header ("Location: Administrar.php");
         }else if($busqueda["Tipo"]=='dos'||$busqueda["Tipo"]=='Dos'){
             header ("Location: pizara.php");
+        }else if($busqueda["Tipo"]=='Docente' || $busqueda["Tipo"]=='DOCENTE'){
+            echo "Es un docente, modulo en proceso de creacion, vuelve al rato XD";
         }
     }
 }

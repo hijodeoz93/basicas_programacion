@@ -7,46 +7,66 @@ function confirmar(){
     if(document.registro.us.value.length==0){
         alert('El campo usuario no debe estar vacio');
         document.registro.us.focus();
-        return val=0;
-    }
-    if(document.registro.pass.value.length<8){
+    }else if(document.registro.pass.value.length<8){
         alert('La contraseña debe ser de 8 caracteres minimo.');
         document.registro.pass.focus();
-        return val=0;
-    }
-    if(document.registro.nomint.value.length==0){
+    }else if(document.registro.nomint.value.length==0){
         alert('El nombre no debe estar vacio');
         document.registro.nomint.focus();
-        return val=0;
-    }
-    if(document.registro.edadint.value<18){
+    }else if(document.registro.edadint.value<18){
         alert('La edad debe ser mayor a 18');
         document.registro.edadint.focus();
-        return val=0;
-    }
-    if(document.registro.carrint.value.length==0){
+    }else if(document.registro.carrint.value.length==0){
         alert('El nombre de la carrera no debe estar vacio');
         document.registro.carrint.focus();
-        return val=0;
-    }
-    if(document.registro.telint.value.length==0){
+    }else if(document.registro.telint.value.length==0){
         alert('El telefono no debe estar vacio');
         document.registro.telint.focus();
-        return val=0;
-    }
-    if(document.registro.correoint1.value.length==0){
+    }else if(document.registro.correoint.value.length==0){
         alert('El correo no debe estar vacio');
         document.registro.correoint1.focus();
-        return val=0;
-    }
-    //val=confirm("¿Estas seguro de enviar los datos?");
-   if(val==1){
-            document.registro.submit();
-        }else{
-            val=0;
+    }else{ 
+    val=confirm("¿Estas seguro de enviar los datos?");
+    if(val){
+             document.registro.submit();
+         }else{
+             document.registro.abort();
+         }
         }
+
         
     }
+    function confirmar_(){
+        let val=1;
+         if(document.registro.us.value.length==0){
+             alert('El campo usuario no debe estar vacio');
+             document.registro.us.focus();
+         }else if(document.registro.pass.value.length<8){
+             alert('La contraseña debe ser de 8 caracteres minimo.');
+             document.registro.pass.focus();
+         }else if(document.registro.nomint.value.length==0){
+             alert('El nombre no debe estar vacio');
+             document.registro.nomint.focus();
+         }else if(document.registro.edadint.value<18){
+             alert('La edad debe ser mayor a 18');
+             document.registro.edadint.focus();
+         }else if(document.registro.telint.value.length==0){
+             alert('El telefono no debe estar vacio');
+             document.registro.telint.focus();
+         }else if(document.registro.correoint.value.length==0){
+             alert('El correo no debe estar vacio');
+             document.registro.correoint.focus();
+         }else{ 
+         val=confirm("¿Estas seguro de enviar los datos?");
+         if(val){
+                  document.registro.submit();
+              }else{
+                  document.registro.abort();
+              }
+             }
+     
+             
+         }
 
     function mostrar_form(){
         var datos=document.getElementById('integ').value;

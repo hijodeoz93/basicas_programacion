@@ -11,8 +11,8 @@ $con=Connect::conectar();
     <title>Registro de Docentes</title>
 </head>
 <body>
-<h1>Registro de alumno</h1>
-    <form action="ingresa_registro.php" method="POST" enctype="multipart/form-data" name="registro"class="form-register">
+<h1>Registro de docentes</h1>
+    <form action="Ingresa_docente.php" method="POST" enctype="multipart/form-data" name="registro"class="form-register">
     <button><a href="salir.php">Regresar</a></button>
         Ingresa tu datos
         <div class="Contenedor-inputs">
@@ -21,28 +21,28 @@ $con=Connect::conectar();
            <p><input type='password' name='passc' placeholder='Repite la contraseña'></p>
 
                 <p><input type="text" name="nomint" placeholder="Nombre" required></p>
-                <p><input type="number" name="edadint" placeholder="Edad" required></p>
-                <p><input type="text" name="carrint" placeholder="Carrera (si aplica)"></p>
-                <p>Selecciona tu género:</p>
-                <p><input type="radio" name="sexoint" value="M"><label>Masculino</label>
-                <input type="radio" name="sexoint" id="F"><label>Femenino</label></p>
+                <p><input type="text" name="carint" placeholder="Cargo (opcional)"></p>
+                <p>Selecciona tu género:
+                <input type="radio" name="sexoint" value="M"><label>Masculino</label>
+                <input type="radio" name="sexoint" value="F"><label>Femenino</label></p>
 </br>
                 <p><input type="tel" name="telint" placeholder="teléfono" required></p>
-                <p><input type="email" name="correoint1" placeholder="Correo" required></p>
+                <p><input type="email" name="correoint" placeholder="Correo" required></p>
             </div>
            <p>
-           Dependencia
-               <select>
+           Dependencia de origen
+               <select id="dependencia" name="dependencia">
                <option default>Selecciona una opcion</option>
                    <?php
-                        $datos3=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Dependencia") or die($con->error());
+                        $datos3=$con->query("SELECT * FROM escuelas") or die($con->error());
                         foreach($datos3 as $filas2){
-                            echo "<option indice='$filas[ID_docente]' carga='$filas2[Nombre]' name='Dependencia'>$filas2[Nombre]</option>";
+                            echo "<option carga='$filas2[Nombre]'>$filas2[Nombre]</option>";
                          }             
                    ?>
                </select>
-               <input type="submit" value="Enviar Registro" name="enviar" onclick="confirmar()">
-           </p>
+               </p>
+               <input type="button" value="Enviar Registro" name="enviar" onclick="confirmar_()">
+
         </fieldset>
     </form>
 </body>
