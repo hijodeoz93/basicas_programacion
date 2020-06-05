@@ -1,8 +1,8 @@
 <?php
 require("Conexion.php");
 if(isset($_POST['Enviar'])){
-    $dat1=htmlentities($_POST['us']);
-    $dat2=htmlentities($_POST['pw']);
+    $dat1=htmlentities($_POST['username']);
+    $dat2=htmlentities($_POST['password']);
     
     $con=Connect::conectar();
     $valida=$con->query("SELECT Usuario, Contrasena,Tipo, idUsuarios FROM usuarios where Usuario='$dat1' and Contrasena='$dat2'") or die ($con->error." -.-");

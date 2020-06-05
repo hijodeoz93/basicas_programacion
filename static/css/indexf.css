@@ -1,0 +1,75 @@
+body{
+    background: url(https://img.freepik.com/vector-gratis/composicion-fondo-degradado-suave-borrosa-moderna-azul-claro_1053-1199.jpg?size=626&ext=jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.main-section{
+    margin: 100px;
+    margin-top:25%;
+    padding: 0px;
+}
+
+.modal-content{
+    
+    background-color: #3b4652;
+    opacity: .85;
+    padding: 0px 0px;
+    box-shadow: 0px 0px 3px #848484;
+}
+.user-img{
+    margin-top: -130px;
+    margin-bottom: 30px;
+}
+
+.user-img img{
+    width: 110px;
+    height: 110px;
+    box-shadow: 0px 0px 3px #848484;
+    border-radius: 50%;
+}
+
+.form-group input{
+    height: 42px;
+    font-size: 18px;
+    border:0;
+    padding-left: 104px;
+    border-radius: 5px;
+}
+
+.form-group::before{
+    font-family: "Font Awesome\ 5 Free";
+    position: absolute;
+    left: 50px;
+    font-size: 22px;
+    padding-top:10px;
+}
+
+.form-group#user-group::before{
+    content: "\f007";
+}
+
+.form-group#contrasena-group::before{
+    content: "\f023";
+}
+
+button{
+    width: 35%;
+    margin: 5px 0 25px;
+}
+
+.forgot{
+    padding: 10px 0;
+}
+
+.forgot a{
+    color: white;
+}
+
+input, textarea, select, button {
+  width : 150px;
+  margin: 0;
+
+  -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+     -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+          box-sizing: border-box;
+}

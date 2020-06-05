@@ -15,7 +15,7 @@ print_r($_POST);
 //[us] => Hazael [pass] => [passc] => [nomint] => afasd [edadint] => 18 
 //[carrint] => dsfsdf [sexoint] => M [telint] => sdfsdfsf [correoint1] => sdfsdfsdf@dgdf.com 
 //[Docente] => Adrian [Dependencia] => Instituto Tecnológico Tláhuac II [enviar] => Enviar Registro 
-    $datos2=$con->query("SELECT ID_Docente from docente where Nombre_D='$val[6]'");
+  /*  $datos2=$con->query("SELECT ID_Docente from docente where Nombre_D='$val[6]'");
     $val3=mysqli_fetch_assoc($datos2);
     $contr1=true;
 if(!$datos2){
@@ -34,6 +34,6 @@ if($contr1||$contr2){
     echo "aguanta que algo salio mal";
 }
 
- 
+ */
 //select delegaciones.Nombre, escuelas.nombre from delegaciones INNER JOIN escuelas ON delegaciones.IdDelegacion=escuelas.IdDelegaciones
 ?>

@@ -13,9 +13,6 @@ function confirmar(){
     }else if(document.registro.nomint.value.length==0){
         alert('El nombre no debe estar vacio');
         document.registro.nomint.focus();
-    }else if(document.registro.edadint.value<18){
-        alert('La edad debe ser mayor a 18');
-        document.registro.edadint.focus();
     }else if(document.registro.carrint.value.length==0){
         alert('El nombre de la carrera no debe estar vacio');
         document.registro.carrint.focus();
@@ -47,9 +44,6 @@ function confirmar(){
          }else if(document.registro.nomint.value.length==0){
              alert('El nombre no debe estar vacio');
              document.registro.nomint.focus();
-         }else if(document.registro.edadint.value<18){
-             alert('La edad debe ser mayor a 18');
-             document.registro.edadint.focus();
          }else if(document.registro.telint.value.length==0){
              alert('El telefono no debe estar vacio');
              document.registro.telint.focus();

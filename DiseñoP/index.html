@@ -56,7 +56,7 @@
                   <a class="nav-link" href="#homepage">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link"  href="Formulario.php">Registrar</a>
+                  <a class="nav-link"  href="Formulario.html">Registrar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Iniciar Sesion</a>
@@ -98,14 +98,14 @@
                 <div class="col-15 user-img">
                     <img src="pleca-lobo.png" th:src="@{/pleca-gob.png}"/>
                 </div>
-                <form class="col-12" action="valida.php" method="post">
+                <form class="col-12" th:action="@{/login}" method="get">
                     <div class="form-group" id="user-group">
                         <input type="text" class="form-control" placeholder="Nombre de usuario" name="username"/>
                     </div>
                     <div class="form-group" id="contrasena-group">
                         <input type="password" class="form-control" placeholder="Contraseña" name="password"/>
                     </div>
-                    <button type="submit" class="btn btn-primary" name="Enviar"><i class="fas fa-sign-in-alt"></i>  Ingresar </button>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar </button>
                 </form>
                 <div class="col-12 forgot">
                     <a href="#">Recordar contraseña</a>
