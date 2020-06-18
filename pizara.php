@@ -47,6 +47,8 @@ $prom=prom($id['idAlumno']);
 <body>
 <button class="boton_salir"><a href="salir.php">Salir</a></button>
 <div class="principal">
+<h1>Listado de actividades</h1>
+<embed src="pruebas/archivos/algo.pdf" type="application/pdf" width="800" height="600"></embed>
 <h1>Tabla de avance</h1>
     <table border=1> 
         <th>Tareas totales</th>

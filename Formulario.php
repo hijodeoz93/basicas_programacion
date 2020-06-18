@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Instituto Tecnologico de Tlahuac 2</title>
     <link rel="icon" href="favicon.ico" type="image/png" />
     <script type="text/javascript" src="funciones.js"></script>

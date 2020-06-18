@@ -13,9 +13,9 @@ function confirmar(){
     }else if(document.registro.nomint.value.length==0){
         alert('El nombre no debe estar vacio');
         document.registro.nomint.focus();
-    }else if(document.registro.carrint.value.length==0){
+    }else if(document.registro.carint.value.length==0){
         alert('El nombre de la carrera no debe estar vacio');
-        document.registro.carrint.focus();
+        document.registro.carint.focus();
     }else if(document.registro.telint.value.length==0){
         alert('El telefono no debe estar vacio');
         document.registro.telint.focus();
