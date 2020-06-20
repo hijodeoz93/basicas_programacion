@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-05-2020 a las 23:31:04
+-- Tiempo de generación: 20-06-2020 a las 08:42:56
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.2
 
@@ -52,16 +52,16 @@ CREATE TABLE `alumno` (
   `Telefono_A` varchar(45) DEFAULT NULL,
   `Correo_A` varchar(45) DEFAULT NULL,
   `Id_Docente` int(11) NOT NULL,
-  `Id_usuario` int(11) NOT NULL
+  `Id_usuario` int(11) NOT NULL,
+  `IdEscuela` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `alumno`
 --
 
-INSERT INTO `alumno` (`idAlumno`, `Carrera`, `Edad`, `Nombre_A`, `Sexo_A`, `Telefono_A`, `Correo_A`, `Id_Docente`, `Id_usuario`) VALUES
-(6, 'no se', 19, 'yuliana cherline', 'o', '2346574555', 'trufis@gmail.com', 8, 2),
-(7, 'sdfgsdg', 21, 'dv dfvs', 'f', 'dfsdfsdf', 'lawea@gmail.com', 8, 3);
+INSERT INTO `alumno` (`idAlumno`, `Carrera`, `Edad`, `Nombre_A`, `Sexo_A`, `Telefono_A`, `Correo_A`, `Id_Docente`, `Id_usuario`, `IdEscuela`) VALUES
+(16, 'sdfsd', NULL, 'asdasdasd', 'S', '45645645', 'hijodeoz.93@gmail.com', 8, 126, 8);
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE `avances` (
   `Id_Tareas` int(11) NOT NULL,
   `Tipo_tarea` int(11) NOT NULL,
   `Hora_creacion` datetime NOT NULL,
-  `Hora_entrega` int(11) NOT NULL,
+  `Hora_entrega` int(20) NOT NULL,
   `Calificacion` double NOT NULL,
   `Ruta_archivo` varchar(50) NOT NULL,
   `Nombre_archivo` varchar(50) NOT NULL,
@@ -85,9 +85,7 @@ CREATE TABLE `avances` (
 --
 
 INSERT INTO `avances` (`Id_Tareas`, `Tipo_tarea`, `Hora_creacion`, `Hora_entrega`, `Calificacion`, `Ruta_archivo`, `Nombre_archivo`, `Id_alumno`) VALUES
-(1, 1, '2020-05-13 00:06:05', 5345, 95.2, 'archivo/', 'algo.pdf', 6),
-(2, 2, '2020-05-27 04:08:47', 45345, 89.3, 'archivo/', 'algo2.pdf', 6),
-(3, 3, '2020-05-17 11:41:08', 456546, 81.3, 'archivo/', 'algo_2.pdf', 7);
+(18, 1, '2020-06-20 03:07:58', 3, 0, 'archivos/prueba', 'IMG_20171011_103953.jpg', 16);
 
 -- --------------------------------------------------------
 
@@ -113,8 +111,7 @@ INSERT INTO `delegaciones` (`IdDelegacion`, `Nombre`) VALUES
 (6, 'Milpa Alta'),
 (7, 'Tláhuac'),
 (8, 'Tlalnepantla'),
-(9, 'Tlalpan'),
-
+(9, 'Tlalpan');
 
 -- --------------------------------------------------------
 
@@ -137,7 +134,8 @@ CREATE TABLE `docente` (
 --
 
 INSERT INTO `docente` (`ID_docente`, `Cargo`, `Nombre_D`, `Sexo_D`, `Dependencia`, `Telefono_D`, `Correo_D`) VALUES
-(8, 'Docente', 'Adrian', 'M', 'ITT2', NULL, NULL);
+(8, 'Docente', 'Adrian', 'M', 'Colegio de Bachilleres 2 Cien Metros', NULL, NULL),
+(13, 'Docente', 'Jose', 'M', 'Unam Cch Plantel Azcapotzalco', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -170,7 +168,7 @@ INSERT INTO `escuelas` (`IdEscuela`, `Nombre`, `IdDelegaciones`) VALUES
 (12, 'Instituto Tecnológico Tláhuac II', 7),
 (13, 'Instituto Tecnológico Tláhuac III', 7),
 (14, 'Instituto Tecnológico Tlalpan', 9),
-(15, 'Instituto Tecnológico Tlalnepantla', 8),
+(15, 'Instituto Tecnológico Tlalnepantla', 8);
 
 -- --------------------------------------------------------
 
@@ -217,17 +215,16 @@ CREATE TABLE `usuarios` (
   `idUsuarios` int(11) NOT NULL,
   `Tipo` varchar(3) DEFAULT NULL,
   `Usuario` varchar(45) DEFAULT NULL,
-  `Contraseña` varchar(45) DEFAULT NULL
+  `Contrasena` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`idUsuarios`, `Tipo`, `Usuario`, `Contraseña`) VALUES
+INSERT INTO `usuarios` (`idUsuarios`, `Tipo`, `Usuario`, `Contrasena`) VALUES
 (1, 'Sup', 'SuperUS', 'Administrador'),
-(2, 'dos', 'Hazael', 'Programacion1'),
-(3, 'dos', 'Roberto', 'Programacion2');
+(126, 'dos', 'Hazael', 'laweawe');
 
 -- --------------------------------------------------------
 
@@ -248,7 +245,8 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 ALTER TABLE `alumno`
   ADD PRIMARY KEY (`idAlumno`),
   ADD KEY `Id_Docente` (`Id_Docente`),
-  ADD KEY `Id_usuario` (`Id_usuario`);
+  ADD KEY `Id_usuario` (`Id_usuario`),
+  ADD KEY `IdEscuela` (`IdEscuela`);
 
 --
 -- Indices de la tabla `avances`
@@ -297,19 +295,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `idAlumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idAlumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `avances`
 --
 ALTER TABLE `avances`
-  MODIFY `Id_Tareas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id_Tareas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `docente`
 --
 ALTER TABLE `docente`
-  MODIFY `ID_docente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID_docente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `tareas`
@@ -321,7 +319,7 @@ ALTER TABLE `tareas`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idUsuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
 
 --
 -- Restricciones para tablas volcadas
@@ -332,7 +330,8 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `alumno`
   ADD CONSTRAINT `alumno_ibfk_1` FOREIGN KEY (`Id_Docente`) REFERENCES `docente` (`ID_docente`),
-  ADD CONSTRAINT `alumno_ibfk_2` FOREIGN KEY (`Id_usuario`) REFERENCES `usuarios` (`idUsuarios`) ON DELETE NO ACTION;
+  ADD CONSTRAINT `alumno_ibfk_2` FOREIGN KEY (`Id_usuario`) REFERENCES `usuarios` (`idUsuarios`) ON DELETE NO ACTION,
+  ADD CONSTRAINT `alumno_ibfk_3` FOREIGN KEY (`IdEscuela`) REFERENCES `escuelas` (`IdEscuela`);
 
 --
 -- Filtros para la tabla `avances`

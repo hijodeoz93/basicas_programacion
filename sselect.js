@@ -1,14 +1,25 @@
 $(document).ready(function(){
-    $('#delegaciones').val(1);
+    $('#delegaciones').val(0);
+    $('#lista2').val(0);
+    $('#lista3').val(0);
+    $('#lista4').val(0);
+    $('#lista5').val(0);
     recargarLista();
-    $('.escuelas').val(1);
-    recargarListaA();
+    recargarListaB();
+    recargarListaC();
 
     $('#delegaciones').change(function(){
         recargarLista();
     });
     $('.escuelas').change(function(){
         recargarListaA();
+    });
+
+    $('.alumno').change(function(){
+        recargarListaB();
+    });
+    $('.alumno').change(function(){
+        recargarListaC();
     });
 });
 
@@ -27,9 +38,31 @@ function recargarListaA(){
     $.ajax({
         type:"POST",
         url:"datos.php",
-        data:"delegacion=" + $('.escuelas').val()+" & validador=1",
+        data:"delegacion=" + $('.escuelas').children().val()+" & validador=1",
         success:function(r){
             $('.alumno').html(r);
+        }
+    });
+};
+
+function recargarListaB(){
+    $.ajax({
+        type:"POST",
+        url:"datos.php",
+        data:"delegacion=" + $('.alumno').children().val()+" & validador=2",
+        success:function(r){
+            $('.archivo').html(r);
+        }
+    });
+};
+function recargarListaC(){
+    console.log("entre men");
+    $.ajax({
+        type:"POST",
+        url:"datos.php",
+        data:"delegacion=" + $('.alumno').children().val()+" & validador=3",
+        success:function(r){
+            $('.avance').html(r);
         }
     });
 };

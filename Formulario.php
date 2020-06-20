@@ -215,7 +215,7 @@
            <option selected>Selecciona una opcion</option>";
                         $datos4=$con->query("SELECT IdEscuela,Nombre FROM escuelas") or die($con->error());
                         foreach($datos4 as $filas3){
-                            echo "<option indice='$filas3[IdEscuela]' carga='$filas3[Nombre]' name='$filas3[Nombre]'>$filas3[Nombre]</option>";
+                            echo "<option carga='$filas3[Nombre]' name='$filas3[Nombre]'>$filas3[Nombre]</option>";
                          }             
                    ?>
                           </select>
