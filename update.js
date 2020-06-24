@@ -21,7 +21,7 @@ $(document).ready(function() {
         var item = $(this);
         var dato= item.attr('indice');
         var dataString = 'item='+dato+'&field='+item.attr('name');
-        //console.log(dataString);
+        console.log(dataString);
  
         $.ajax({
             type: "POST",
@@ -29,6 +29,9 @@ $(document).ready(function() {
             data: dataString,
             success: function(response) {			
                alert("Eliminacion correcta");
+            },
+            error: function(response){
+                console.log(response);
             }
         });
     });                 

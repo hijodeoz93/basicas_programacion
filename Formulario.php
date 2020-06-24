@@ -58,10 +58,7 @@
                       <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="formulario.php">Registrar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Iniciar Sesion</a>
+                        <a class="nav-link" href="index.html">Regresar</a>
                       </li>
                     <li class="nav-item">
                       <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contacto</a>
@@ -91,12 +88,14 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
-<div class="modal-dialog text-center">
-        
-    <br><h2 class="title" text-center>Bienvenido Alumno(a)</h2></br>
-    <h2 class="title">Registro a la Convocatoria del Concurso de Programacion</h2>
+<center><div class="modal-dialog text-center">
+<br></br>
+  <br></br>
+  <center><font face="Leelawadee"><h3><strong>INTER-TecNM PROGRAMMER CDMX</strong></h3></font></center>    
+  <center><font face="Leelawadee"><h3><strong>Registro Alumnos</strong></h3></font></center>
+  <br></br>
     <div class="col-sm-8 main-section">
-        <div class="modal-content">
+        <center><div class="modal-content">
             <div class="col-20 user-img">
                 <img src="pleca-lobo.png" th:src="@{/pleca-gob.png}"/>
             </div>
@@ -226,28 +225,50 @@
                         
                     
                   </form>
-<header> 
-            
-        <div id="header" class="mt-5">
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div></center>
+                        </div></center>
 
-        <div class="container-fluid">
-
-            <div class="row align-items-center">
-
-                <div class="col-2">
-                    <a href="https://www.gob.mx/"><img width="100%" src="pleca-gob1.png"
-                            alt=""></a>
-                </div>
-
-                <div class="col-2">
-                    <a href="https://www.gob.mx/sep"><img width="100%" src="pleca-gob2.png"
-                            alt=""></a>
-                </div>
-
-                <div class="col-1">
-                    <a href="#"><img width="100%" src="pleca_tecnm.jpg" alt=""></a>
-                </div>
         </form>
-</body>
+                        </body>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6>Dirección</h6>
+        <p class="text-justify">Camino Real #625 Col. Jardines del Llano, San Juan Ixtayopan, 
+            <p>Deleg. Tláhuac, C.P. 13550 México, CDMX</p>
+            <li><a>www.ittlahuac2.edu.mx</a></li>
 
+            
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>Contacto</h6>
+        <ul class="footer-links">
+          <li><a>Teléfonos</a></li>
+          <li><a>(55) 5848-4229</a></li>
+          <li><a>(55) 5848-4218</a></li>
+          <li><a>Email- ext_tlahuac2@tecnm.mx</a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <a class="site footer" href="#homepage"><img src="pleca-lobo.png" alt="" width="110" height="140"/></a>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <center><p class="copyright-text">Copyright &copy; 2020 ITT2</p></center>
+      </div>
+    </div>
+  </div>
+</footer>
 </html>

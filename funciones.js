@@ -79,9 +79,10 @@ function confirmar(){
     });
     
     function subir(form){
-        let barra_estado=form.children[1].children[0],
+        console.log(form)
+        let barra_estado=form.children[6].children[0],
         span=barra_estado.children[0],
-        bnt_cancelar=form.children[2].children[1];
+        bnt_cancelar=form.children[7].children[1];
         console.log(barra_estado, span, bnt_cancelar)
     
         barra_estado.classList.remove('barra-verde', 'barra-roja');

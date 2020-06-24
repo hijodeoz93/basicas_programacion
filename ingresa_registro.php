@@ -25,7 +25,7 @@ print_r($_POST);
 
     $contr1=true;
 if($rows>0 && $row2>0){
-    $datos3=$con->query("insert into alumno(Nombre_A, Carrera, Sexo_A, Telefono_A, Correo_A, Id_Docente,Id_usuario, IdEscuela)values('$val2[0]', '$val2[1]','$val2[2]','$val2[3]','$val2[4]',$val3[ID_Docente],$id[0],$val4[IdEscuela])") or die ($con->error."-.-");
+    $datos3=$con->query("insert into alumno(Nombre_A, Carrera, Sexo_A, Telefono_A, Correo_A, Id_Docente,Id_usuario, IdEscuela)values('".strtoupper($val2[0])."', '".strtoupper($val2[1])."','".strtoupper($val2[2])."','".strtoupper($val2[3])."','".strtoupper($val2[4])."',$val3[ID_Docente],$id[0],$val4[IdEscuela])") or die ($con->error."-.-");
     $contr2=true;
     
 }else{
