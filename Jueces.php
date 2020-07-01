@@ -53,6 +53,7 @@ $con=Connect::conectar();
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="sselect.js"></script>
 	<script src="agrega_filas.js"></script>
+	<script src="funciones2.js"></script>
     
     <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -63,7 +64,8 @@ $con=Connect::conectar();
     <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
     <!-- Nuestro css-->
-    <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/css/index.css}">
+	<link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/css/index.css}">
+	<link rel="stylesheet" href="static/css/estilo.css"/>
 
 </head>
 <body>
@@ -152,7 +154,8 @@ $con=Connect::conectar();
 									<td class="column2"><div class="escuelas"></div>
     								<td class="column3"><div class="alumno"><select id='lista3' name='lista3'><option value='0'>Selecciona una opcion</option></div></td>
     								<td class="column4"><div class="archivo"><select id='lista4' name='lista4'><option value='0'>Selecciona una opcion</option></div></td></div></td>
-    								<td class="column5"><div class="avance"></div></td></tr>
+									<td class="column5"><div class="avance"></div></td>
+									<td class="column6"><div class="cal"></div></td></tr>
 						</tbody>
 					</table>
 						<br>
@@ -166,12 +169,11 @@ $con=Connect::conectar();
 						</thead>
 						<tbody>
 								<tr>
-								<td class="column1"><embed src="pruebas/archivos/algo.pdf" type="application/pdf" width="800" height="600"></embed></td>
+								<td class="column1"><div class="ver"></div></td>
 								</tr>
 						</tbody>
 					</table>
 					<br>
-				<form id="tareas">
 					<table>
 						<thead>
 							
@@ -182,10 +184,11 @@ $con=Connect::conectar();
 						</thead>
 						<tbody>
     					<tr><td class="column1"><input type="text" name="calif" id="calif"></td>
-						<td class="column2"><input align="center" type="text" name="calif" id="califT" disabled placeholder="algo"></td>
+						<td class="column2"><input align="center" type="text" name="calif" id="califT" disabled placeholder="algo" maxlength="3"></td>
 						</tr>
 						</tbody>
 					</table>
+					<form action="sube2.php" method="post" enctype="multipart/form-data" id="sube_tareas">
 					<br>
 					<br>
 					<center><font face="Leelawadee"><h2><strong>Modulo para actividades</strong></h2></font></center>
@@ -198,24 +201,33 @@ $con=Connect::conectar();
 						</thead>
 						<tbody>
 						<tr>
-							<td class="column1"><input type="text" name="N_actividad[]" id=""></td>
+							<td class="column1"><input type="text" name="N_actividad[]"></td>
 							<td class="column2"><input type="text" name="Tiempo[]"></td>
 							<td class="column3"><button type="button" class="remove-item borrar btn btn-danger"><span class="fa fa-window-close"></span></button></td>
 						</tr>
 						</tbody>
-					
 					</table>
+					<br>
 					<table class="table100-head">
 						<thead>
 						<th class="column1">Instructivo de las actividades</th>
 						</thead>
 						<tbody>
-						<tr><td class="column1"><input type="file" name="Instructivo"></td></tr>
+						<tr><td class="column1"><input type="file" name="ins" accept='aplication/pdf'></td></tr>
 						</tbody>
 					</table>
 					<button type="button" class="btn btn-default" id="masfilas">Agregar una actividad más</button>
-					<button type="Submit" class="btn btn-success" id="btne">Enviar</button>
-
+					<br>
+					<br>
+					<div class="barra">
+			    		<div class="barra-azul" id="barra_estado">
+				    		<span></span>
+		      			</div>
+		    		</div>
+    				<div class="acciones">
+		    				<button type="submit" class="btn btn-primary" value="Enviar" id="btn-enviar">Enviar</button>
+		    				<button type="button" class="cancelar btn btn-danger" id="cancelar">Cancelar</button>
+    				</div> 
 
 				</form>
 				</div>

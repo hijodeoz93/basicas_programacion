@@ -62,9 +62,9 @@ button{
 .forgot a{
     color: white;
 }
-#btne, #masfilas{
+#btn-enviar, #masfilas,#cancelar{
   float: left;
-  width:47% !important;
+  width:27% !important;
 }
 /* ===[ Responsive just mobile portrait ]=== */
 

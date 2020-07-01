@@ -4,7 +4,6 @@
 	$con=Connect::conectar();
 	$continente=$_POST['delegacion'];
 	$val=$_POST['validador'];
-
 	function prom($var){
 		$con=Connect::conectar();
 		$t=$con->query("select count(Id_tarea) from tareas");
@@ -43,7 +42,20 @@
 		echo  $cadena."</select></td>";
 	}else if($val==3){
 		
-	echo prom($continente)."%";
+	echo round(prom($continente),2)."%";
+	}else if($val==4){
+		$t=$con->query("SELECT * FROM avances where Id_alumno=$continente");
+		$ver=mysqli_fetch_row($t);
+		if($ver<=0){
+			echo "Sin datos";
+		}else{
+		echo $ver[4];
+	}
+	}else if($val==5){
+		$arch=$_POST['arch'];
+		$t=$con->query("SELECT * FROM avances where Id_alumno=$continente and Id_Tareas=$arch");
+		$ver=mysqli_fetch_row($t);
+		echo"<embed src='".$ver[5]."/".$ver[6]."' type='application/pdf' width='800' height='600'></embed>";
 	}
 
 ?>

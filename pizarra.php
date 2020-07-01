@@ -175,8 +175,8 @@ $prom=prom($id['idAlumno']);
 					<thead>
 						<tr class="table200-head">
 							<br></br>
-							<center><font face="Leelawadee"><h2><strong>Instruciones</strong></h2></font></center>
-							<center><embed src="pruebas/archivos/algo.pdf" type="application/pdf" width="800" height="600"></embed><center>
+							<center><font face="Leelawadee"><h2><strong>Instrucciones</strong></h2></font></center>
+							<center><embed src="archivos/prueba2/TESIS_DML_Final.pdf" type="application/pdf" width="800" height="600"></embed><center>
 							<br></br>
 							<center><font face="Leelawadee"><h2><strong>Avance</strong></h2></font></center>
 							<th class="column5">Tareas entregadas</th>
@@ -191,7 +191,7 @@ $prom=prom($id['idAlumno']);
                 <td class='column5'>$colTareas[Tipo_tarea]</td>
                 <td class='column6'>
             <div class='form-1-2'>
-                    <input type='file' name='archivo[]'>
+                    <input type='file' name='archivo[]' accept='aplication/pdf'>
                     </td>
                 </tr>
             </div>"; 

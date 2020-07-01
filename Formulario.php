@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <title>Instituto Tecnologico de Tlahuac 2</title>
     <link rel="icon" href="favicon.ico" type="image/png" />
@@ -107,7 +107,7 @@
                           <div class="input-group-prepend">
                             <div class="input-group-text"></div>
                             </div>
-                        <input type="text" class="form-control" name='nomint' placeholder="Nombre(s)">
+                        <input type="text" class="form-control" name='nomint' placeholder="Nombre(s)" maxlength="15">
                       </div>
                       </div>
                       <div class="col">
@@ -115,7 +115,7 @@
                           <div class="input-group-prepend">
                             <div class="input-group-text"></div>
                             </div>
-                        <input type="text" class="form-control" name='apeint' placeholder="Apellidos">
+                        <input type="text" class="form-control" name='apeint' placeholder="Apellidos" maxlength="10">
                       </div>
                       </div>
                       </div>
@@ -125,7 +125,7 @@
                           <div class="input-group-prepend">
                             <div class="input-group-text"></div>
                           </div>
-                          <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username" name='us'>
+                          <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username" name='us'maxlength="8">
                         </div>
                       </div>
                     
@@ -135,7 +135,7 @@
                           <div class="input-group-prepend">
                             <div class="input-group-text"></div>
                             </div>
-                          <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" placeholder="Contraseña" name="pass">
+                          <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" placeholder="Contraseña" name="pass" maxlength="10">
                         </div>
                         </div>
                         <div class="col-auto">
@@ -144,7 +144,7 @@
                           <div class="input-group-prepend">
                             <div class="input-group-text"></div>
                             </div>
-                              <input type="password" class="form-control" id="inputPassword">
+                              <input type="password" class="form-control" id="inputPassword" maxlength="10">
                             </div>
                           </div>
                           <div class="col-auto">
@@ -160,7 +160,7 @@
                           <div class="input-group-prepend">
                             <div class="input-group-text"></div>
                             </div>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Carrera" name="carint">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Carrera" name="carint" maxlength="4">
                       </div>
                 <div class="form-row align-items-center">
                     <div class="col-auto my-1">
@@ -182,7 +182,7 @@
                           <div class="input-group-prepend">
                             <div class="input-group-text"></div>
                             </div>
-                            <input type="tel" class="form-control" id="inputTelephone" name="telint">
+                            <input type="tel" class="form-control" id="inputTelephone" name="telint" maxlength="10" onkeypress="return controltag(event)">
                           </div>
                           </div>
                     </div>
