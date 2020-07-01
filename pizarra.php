@@ -143,7 +143,7 @@ $prom=prom($id['idAlumno']);
 <body>
 	
 	<div class="limiter">
-		<div class="container-table100">
+		<div class="table-responsive container-table100">
 			<div class="wrap-table100">
 				<div class="table100">
 					<table>

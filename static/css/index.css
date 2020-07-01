@@ -68,31 +68,6 @@ button{
 }
 /* ===[ Responsive just mobile portrait ]=== */
 
-@media (max-width: 479px) { 
-  header .buttons-wrapper .button.button-stripe {
-      margin-left: 0
-  }
-
-  .discover-content h2 {
-      font-size: 36px;
-      line-height: 46px;
-  }
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) { 
-  .comments .tab-prev,
-  .comments .tab-next,
-  .button-download:after,
-  .comments .tab-prev,
-  .comments .tab-next,
-  .button-download:after {
-      background: url(../images/sprite@2x.png) 0 0 no-repeat;
-      -moz-background-size: 200px 50px;
-      -webkit-background-size: 200px 50px;
-      -o-background-size: 200px 50px;
-      background-size: 200px 50px;
-  }
-}
 /*/////////////////////////Foter/////////////////////////////////////////*/
 .site-footer
 {
@@ -167,22 +142,4 @@ button{
 .copyright-text
 {
   margin:0
-}
-@media (max-width:991px)
-{
-  .site-footer [class^=col-]
-  {
-    margin-bottom:30px
-  }
-}
-@media (max-width:767px)
-{
-  .site-footer
-  {
-    padding-bottom:0
-  }
-  .site-footer .copyright-text,.site-footer .social-icons
-  {
-    text-align:center
-  }
 }

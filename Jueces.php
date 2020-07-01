@@ -124,7 +124,7 @@ $con=Connect::conectar();
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
-				<div class="table100">
+				<div class="table-responsive table100">
 					<table>
 						<thead>
 							

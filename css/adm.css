@@ -57,7 +57,7 @@ ul, li {
 
 /* ------------------------------------ */
 input {
-  display: block;
+  display: inline-block !important;
 	outline: none;
 	border: none !important;
 }
@@ -108,7 +108,7 @@ iframe {
 .container-table100 {
   width: 100%;
   min-height: 100vh;
-  background: 
+  background: none;
  
 
   display: -webkit-box;
@@ -125,7 +125,10 @@ iframe {
 .wrap-table100 {
   width: 1170px;
 }
-
+input{
+  margin: 1px !important;
+  left: center;
+}
 table {
   border-spacing: 1;
   border-collapse: collapse;
@@ -139,9 +142,7 @@ table {
 table * {
   position: relative;
 }
-table td, table th {
-  padding-left: 8px;
-}
+
 table thead tr {
   height: 60px;
   background: #36304a;
@@ -193,116 +194,41 @@ tbody tr:hover {
 }
 
 .column1 {
-  width: 180px;
-  padding-left: 40px;
-  text-align: center;
+  text-align: center !important;
 }
 
 .column2 {
-  width: 180px;
-  padding-left: 60px;
-  text-align: center;
+  text-align: center !important;
 }
 
 .column3 {
-  width: 100%;
-  padding-left: 60px;
-  text-align: center;
+  text-align: center !important;
 }
 
 .column4 {
-    width: 180px;
-    text-align: center;
+
+    text-align: center !important;
   }
 
 .column5 {
-  width: 200px;
-  text-align: center;
-  padding-right: 40px;
+  width: 90%;
+  text-align: center !important;
 }
 .column6 {
-  width: 250px;
+  width: 90%;
   text-align: center;
-  padding-right: 40px;
 }
 button{
-  width:250px;
+  width:75%;
 }
 .salir{
   color: red !important;
 }
-
-
-@media screen and (max-width: 992px) {
-  
-  table {
-    display: block;
-  }
-  table > *, table tr, table td, table th {
-    display: block;
-  }
-  table thead {
-    display: none;
-  }
-  table tbody tr {
-    height: auto;
-    padding: 37px 0;
-  }
-  table tbody tr td {
-    padding-left: 40% !important;
-    margin-bottom: 24px;
-  }
-  table tbody tr td:last-child {
-    margin-bottom: 0;
-  }
-  table tbody tr td:before {
-    font-family: OpenSans-Regular;
-    font-size: 14px;
-    color: #999999;
-    line-height: 1.2;
-    font-weight: unset;
-    position: absolute;
-    width: 40%;
-    left: 30px;
-    top: 0;
-  }
-  table tbody tr td:nth-child(1):before {
-    content: "";
-  }
-  table tbody tr td:nth-child(2):before {
-    content: "";
-  }
-  table tbody tr td:nth-child(3):before {
-    content: "";
-  }
-  table tbody tr td:nth-child(4):before {
-    content: "";
-  }
-  table tbody tr td:nth-child(5):before {
-    content: "";
-  }
-  
-  text-align: left;
-  .column4,
-  .column5{
-    text-align: left;
-  }
-
-  .column4,
-  .column5,
-  .column1,
-  .column2,
-  .column3 {
-
-  tbody tr {
-    font-size: 14px;
-  }
+.columnS {
+  width: 25%;
+  text-align: center;
+  padding-right: 40px;
 }
 
-@media (max-width: 576px) {
-  .container-table200 {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
+
 /*//////////////////////////////////////////////////////////////////*/

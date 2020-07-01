@@ -115,7 +115,7 @@ $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Depend
 <body>
 	
 	<div class="limiter">
-		<div class="container-table100">
+		<div class="table-responsive container-table100">
 			<div class="wrap-table100">
 				<div class="table100">
 				<form action="#">
@@ -127,12 +127,12 @@ $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Depend
 								<br></br>
 								<center><font face="Leelawadee"><h2><strong>Módulo de administración</strong></h2></font></center>
 								<center><font face="Leelawadee"><h4><strong>Edicion del alumno</strong></h4></font></center>
-								<th class="column1">Nombre del alumno</th>
-								<th class="column2">Carrera</th>
-								<th class="column3">Sexo</th>
-								<th class="column4">Telefono</th>
-								<th class="column5">Correo</th>
-								<th class="column6">Eliminar registro</th>
+								<th class="column1" scope="row">Nombre del alumno</th>
+								<th class="column2" scope="row">Carrera</th>
+								<th class="column3" scope="row">Sexo</th>
+								<th class="column4" scope="row">Telefono</th>
+								<th class="column5" scope="row">Correo</th>
+								<th class="column6" scope="row">Eliminar registro</th>
 								
 							</tr>
 						</thead>
@@ -148,11 +148,11 @@ $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Depend
 										echo 
 										"<tr>
 												 
-											 <td><input type='text' value='$filas[Nombre_A]' maxlength='45'name='Nombre_A' indice='$filas[idAlumno]' class='column1'></td>
-											 <td><input type='text' value='$filas[Carrera]'maxlength='45' name='Carrera' indice='$filas[idAlumno]' class='column2'></td>
-											 <td><input type='text' value='$filas[Sexo_A]'maxlength='1' name='Sexo_A' indice='$filas[idAlumno]' class='column3'></td>
-											 <td><input type='text' value='$filas[Telefono_A]'maxlength='45' name='Telefono_A' indice='$filas[idAlumno]' class='column4'></td>
-											 <td><input type='email' value='$filas[Correo_A]'maxlength='45' name='Correo_A' indice='$filas[idAlumno]' class='column5'></td>
+											 <td><input type='text' value='$filas[Nombre_A]' maxlength='45'name='Nombre_A' indice='$filas[idAlumno]' class='column1' scope='col'></td>
+											 <td><input type='text' value='$filas[Carrera]'maxlength='45' name='Carrera' indice='$filas[idAlumno]' class='column2' scope='col'></td>
+											 <td><input type='text' value='$filas[Sexo_A]'maxlength='1' name='Sexo_A' indice='$filas[idAlumno]' class='column3' scope='col'></td>
+											 <td><input type='text' value='$filas[Telefono_A]'maxlength='45' name='Telefono_A' indice='$filas[idAlumno]' class='column4' scope='col'></td>
+											 <td><input type='email' value='$filas[Correo_A]'maxlength='45' name='Correo_A' indice='$filas[idAlumno]' class='column5' scope='col'></td>
 											 <td><button type='button' class='delete column6 btn btn-danger' name='Nombre_A' indice='$filas[idAlumno]'>Eliminar</button></td>
 											 </tr>
 											 
@@ -169,11 +169,11 @@ $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Depend
 							<center><font face="Leelawadee"><h4><strong>Edicion del docente</strong></h4></font></center>
 							<tr class="table100-head">
 								<h1></h1>
-								<th class="column1">Nombre del docente</th>
-								<th class="column2">Cargo</th>
-								<th class="column3">Dependencia</th>
-								<th class="column4">Sexo</th>
-								<th class="column5">Eliminar registro</th>
+								<th class="column1" scope="row">Nombre del docente</th>
+								<th class="column2" scope="row">Cargo</th>
+								<th class="column3" scope="row">Sexo</th>
+								<th class="column4" scope="row">Dependencia</th>
+								<th class="column5" scope="row">Eliminar registro</th>
 								
 							</tr>
 						</thead>
@@ -187,14 +187,15 @@ $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Depend
 									}else{
     foreach($datos5 as $filas){
         echo "<tr>
-                <td><input type='text' value='$filas[Nombre_D]'maxlength='45' name='Nombre_D' indice='$filas[ID_docente]' class='column1'></td>
-                <td><input type='text' value='$filas[Cargo]'maxlength='45' name='Cargo' indice='$filas[ID_docente]' class='column2'></td>";
-                echo " <td class='column3'><select>";
+                <td><input type='text' value='$filas[Nombre_D]'maxlength='45' name='Nombre_D' indice='$filas[ID_docente]' class='column1' scope='col'></td>
+                <td><input type='text' value='$filas[Cargo]'maxlength='45' name='Cargo' indice='$filas[ID_docente]' class='column2' scope='col'></td>";
+				echo " <td><input type='text' value='$filas[Sexo_D]'maxlength='1' name='Sexo_D' indice='$filas[ID_docente]' class='column3' scope='col'></td>
+				<td class='column4' scope='col'><select>";
        foreach($datos3 as $filas2){
           echo "<option indice='$filas[ID_docente]' carga='$filas2[Nombre]' name='Dependencia'>$filas2[Nombre]</option>";
 	   } 
 	   echo"</select></td>
-				<td><input type='text' value='$filas[Sexo_D]'maxlength='1' name='Sexo_D' indice='$filas[ID_docente]' class='column4'></td>
+				
 				<td><button class='delete column5 btn btn-danger' name='Nombre_D' indice='$filas[ID_docente]'>Eliminar registro</button></td>
            </tr>";
 	}
