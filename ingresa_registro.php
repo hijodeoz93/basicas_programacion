@@ -7,12 +7,12 @@ $con=Connect::conectar();
 $agrega_us=$con->query("insert into usuarios (Tipo, Usuario, Contrasena) values('dos','$us','$pass')");
 $Id_us=$con->query("SELECT idUsuarios from usuarios where Usuario='$us'");
 $id=mysqli_fetch_array($Id_us) or die($con->error);
-$val2=[$_POST["nomint"],$_POST["carint"],$_POST["sexoint"],$_POST["telint"],$_POST["correoint"],$_POST["Docente"],$_POST["Escuela"]];
+$val2=[$_POST["nomint"],$_POST["carint"],$_POST["sexoint"],$_POST["telint"],$_POST["correoint"],$_POST["Docente"],$_POST["Escuela"],$_POST["apeint"]];
 $contr1=false;
 $contr2=false;
 $contr3=false;
 print_r($_POST);
-//[us] => Hazael [pass] => [passc] => [nomint] => afasd [edadint] => 18 
+//[us] => Hazael [pass] => [passc] => [nomint] => afasd [apeint] => Muñoz [edadint] => 18 
 //[carrint] => dsfsdf [sexoint] => M [telint] => sdfsdfsf [correoint1] => sdfsdfsdf@dgdf.com 
 //[Docente] => Adrian [Dependencia] => Instituto Tecnológico Tláhuac II [enviar] => Enviar Registro 
  $datos2=$con->query("SELECT ID_Docente from docente where Nombre_D='$val2[5]'");
@@ -25,7 +25,7 @@ print_r($_POST);
 
     $contr1=true;
 if($rows>0 && $row2>0){
-    $datos3=$con->query("insert into alumno(Nombre_A, Carrera, Sexo_A, Telefono_A, Correo_A, Id_Docente,Id_usuario, IdEscuela)values('".strtoupper($val2[0])."', '".strtoupper($val2[1])."','".strtoupper($val2[2])."','".strtoupper($val2[3])."','".strtoupper($val2[4])."',$val3[ID_Docente],$id[0],$val4[IdEscuela])") or die ($con->error."-.-");
+    $datos3=$con->query("insert into alumno(Nombre_A, Apellido, Carrera, Sexo_A, Telefono_A, Correo_A, Id_Docente,Id_usuario, IdEscuela)values('".strtoupper($val2[0])."','".strtoupper($val2[7])."', '".strtoupper($val2[1])."','".strtoupper($val2[2])."','".strtoupper($val2[3])."','".strtoupper($val2[4])."',$val3[ID_Docente],$id[0],$val4[IdEscuela])") or die ($con->error."-.-");
     $contr2=true;
     
 }else{

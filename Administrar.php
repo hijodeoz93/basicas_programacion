@@ -43,8 +43,14 @@ $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Depend
     background:rgba(0, 0, 0, 0.199);
     }
     .top-nav-colapse{
-        background:rgba(41, 41, 43, 0.212); !important;
+        background:rgba(41, 41, 43, 0.212) !important;
     }
+	.export{
+		margin-left:auto !important;
+		margin-right:auto !important;
+		width:20% !important;
+		float:right !important
+	}
 </style>
    
     <!--JQUERY-->
@@ -148,11 +154,11 @@ $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Depend
 										echo 
 										"<tr>
 												 
-											 <td><input type='text' value='$filas[Nombre_A]' maxlength='45'name='Nombre_A' indice='$filas[idAlumno]' class='column1' scope='col'></td>
-											 <td><input type='text' value='$filas[Carrera]'maxlength='45' name='Carrera' indice='$filas[idAlumno]' class='column2' scope='col'></td>
+											 <td><input type='text' value='$filas[Nombre_A]' maxlength='10'name='Nombre_A' indice='$filas[idAlumno]' class='column1' scope='col'></td>
+											 <td><input type='text' value='$filas[Carrera]'maxlength='4' name='Carrera' indice='$filas[idAlumno]' class='column2' scope='col'></td>
 											 <td><input type='text' value='$filas[Sexo_A]'maxlength='1' name='Sexo_A' indice='$filas[idAlumno]' class='column3' scope='col'></td>
-											 <td><input type='text' value='$filas[Telefono_A]'maxlength='45' name='Telefono_A' indice='$filas[idAlumno]' class='column4' scope='col'></td>
-											 <td><input type='email' value='$filas[Correo_A]'maxlength='45' name='Correo_A' indice='$filas[idAlumno]' class='column5' scope='col'></td>
+											 <td><input type='text' value='$filas[Telefono_A]'maxlength='10' name='Telefono_A' indice='$filas[idAlumno]' class='column4' scope='col'></td>
+											 <td><input type='email' value='$filas[Correo_A]'maxlength='25' name='Correo_A' indice='$filas[idAlumno]' class='column5' scope='col'></td>
 											 <td><button type='button' class='delete column6 btn btn-danger' name='Nombre_A' indice='$filas[idAlumno]'>Eliminar</button></td>
 											 </tr>
 											 
@@ -187,8 +193,8 @@ $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Depend
 									}else{
     foreach($datos5 as $filas){
         echo "<tr>
-                <td><input type='text' value='$filas[Nombre_D]'maxlength='45' name='Nombre_D' indice='$filas[ID_docente]' class='column1' scope='col'></td>
-                <td><input type='text' value='$filas[Cargo]'maxlength='45' name='Cargo' indice='$filas[ID_docente]' class='column2' scope='col'></td>";
+                <td><input type='text' value='$filas[Nombre_D]'maxlength='10' name='Nombre_D' indice='$filas[ID_docente]' class='column1' scope='col'></td>
+                <td><input type='text' value='$filas[Cargo]'maxlength='10' name='Cargo' indice='$filas[ID_docente]' class='column2' scope='col'></td>";
 				echo " <td><input type='text' value='$filas[Sexo_D]'maxlength='1' name='Sexo_D' indice='$filas[ID_docente]' class='column3' scope='col'></td>
 				<td class='column4' scope='col'><select>";
        foreach($datos3 as $filas2){
@@ -203,6 +209,9 @@ $datos2=$con->query("SELECT * FROM escuelas LEFT JOIN docente on Nombre = Depend
 	?>
 						</tbody>
 					</table>
+					</form>
+					<form action="Excel_export.php" method="post">
+					<button type="submit" class='export btn btn-success'>Exportar datos</button>
 					</form>
 				</div>
 			</div>

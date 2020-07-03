@@ -134,4 +134,87 @@ function confirmar(){
         te = String.fromCharCode(tecla);
         return patron.test(te);
          }
+
+function checarnom(){
+    var inputEmail = document.querySelector('#nomint');
+
+    inputEmail.onkeyup = function(e) {
+        var max = 15; // The maxlength you want
+      
+        if(inputEmail.value.length > max) {
+          inputEmail.value = inputEmail.value.substring(0, max);
+        }
+      
+    };
+
+}
+
+function checarape(){
+    var inputEmail = document.querySelector('#apeint');
+
+    inputEmail.onkeyup = function(e) {
+        var max = 15; // The maxlength you want
+      
+        if(inputEmail.value.length > max) {
+          inputEmail.value = inputEmail.value.substring(0, max);
+        }
+      
+    };
+
+}
+
+function checarus(){
+    var inputEmail = document.querySelector('#inlineFormInputGroup');
+
+    inputEmail.onkeyup = function(e) {
+        var max = 8; // The maxlength you want
+      
+        if(inputEmail.value.length > max) {
+          inputEmail.value = inputEmail.value.substring(0, max);
+        }
+      
+    };
+
+}
+function checarpass(){
+    var inputEmail = document.querySelector('#pass');
+
+    inputEmail.onkeyup = function(e) {
+        var max = 10; // The maxlength you want
+      
+        if(inputEmail.value.length > max) {
+          inputEmail.value = inputEmail.value.substring(0, max);
+        }
+      
+    };
+
+}
+function checarcarr(){
+    var inputEmail = document.querySelector('#exampleFormControlInput1');
+
+    inputEmail.onkeyup = function(e) {
+        var max = 15; // The maxlength you want
+      
+        if(inputEmail.value.length > max) {
+          inputEmail.value = inputEmail.value.substring(0, max);
+        }
+      
+    };
+
+}
+function checarpass2(){
+    var inputEmail = document.querySelector('#inputPassword');
+
+    inputEmail.onkeyup = function(e) {
+        var max = 10; // The maxlength you want
+      
+        if(inputEmail.value.length > max) {
+          inputEmail.value = inputEmail.value.substring(0, max);
+        }
+      
+    };
+
+}
+
+
     //window.onload=function(){ocultar()};

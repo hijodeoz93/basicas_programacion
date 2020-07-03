@@ -6,7 +6,6 @@
     
     <title>Instituto Tecnologico de Tlahuac 2</title>
     <link rel="icon" href="favicon.ico" type="image/png" />
-    <script type="text/javascript" src="funciones.js"></script>
     <!-- Font Awesome -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Google Fonts -->
@@ -88,6 +87,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+    <script type="text/javascript" src="funciones.js"></script>
 <center><div class="modal-dialog text-center">
 <br></br>
   <br></br>
@@ -107,7 +107,7 @@
                           <div class="input-group-prepend">
                             <div class="input-group-text"></div>
                             </div>
-                        <input type="text" class="form-control" name='nomint' placeholder="Nombre(s)" maxlength="15">
+                        <input type="text" class="form-control" name='nomint' placeholder="Nombre(s)" id="nomint" onkeyup="checarnom()">
                       </div>
                       </div>
                       <div class="col">
@@ -115,7 +115,7 @@
                           <div class="input-group-prepend">
                             <div class="input-group-text"></div>
                             </div>
-                        <input type="text" class="form-control" name='apeint' placeholder="Apellidos" maxlength="10">
+                        <input type="text" class="form-control" name='apeint' placeholder="Apellidos" maxlength="10" id='apeint' onkeyup="checarape()">
                       </div>
                       </div>
                       </div>
@@ -125,7 +125,7 @@
                           <div class="input-group-prepend">
                             <div class="input-group-text"></div>
                           </div>
-                          <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username" name='us'maxlength="8">
+                          <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username" name='us'maxlength="8" onkeyup="checarus()">
                         </div>
                       </div>
                     
@@ -135,7 +135,7 @@
                           <div class="input-group-prepend">
                             <div class="input-group-text"></div>
                             </div>
-                          <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" placeholder="Contraseña" name="pass" maxlength="10">
+                          <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" placeholder="Contraseña" name="pass" maxlength="10" id='pass' onkeyup="checarnom()" >
                         </div>
                         </div>
                         <div class="col-auto">
@@ -144,7 +144,7 @@
                           <div class="input-group-prepend">
                             <div class="input-group-text"></div>
                             </div>
-                              <input type="password" class="form-control" id="inputPassword" maxlength="10">
+                              <input type="password" class="form-control" id="inputPassword" maxlength="10" onkeyup="checarpass2()">
                             </div>
                           </div>
                           <div class="col-auto">
@@ -160,7 +160,7 @@
                           <div class="input-group-prepend">
                             <div class="input-group-text"></div>
                             </div>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Carrera" name="carint" maxlength="4">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Carrera" name="carint" maxlength="4" id="carint" onkeyup="checarcarr()">
                       </div>
                 <div class="form-row align-items-center">
                     <div class="col-auto my-1">

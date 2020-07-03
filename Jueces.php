@@ -183,8 +183,8 @@ $con=Connect::conectar();
 							</tr>
 						</thead>
 						<tbody>
-    					<tr><td class="column1"><input type="text" name="calif" id="calif"></td>
-						<td class="column2"><input align="center" type="text" name="calif" id="califT" disabled placeholder="algo" maxlength="3"></td>
+    					<tr><td class="column1"><input type="text" name="calif" id="calif" maxlength="3"></td>
+						<td class="column2"><input align="center" type="text" name="calif" id="califT" disabled maxlength="3"></td>
 						</tr>
 						</tbody>
 					</table>
